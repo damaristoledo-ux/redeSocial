@@ -1,82 +1,1408 @@
-//Botão curtida
+preciso que você analise esses três códigos (HTML, CSS e JS). Ajuste o Js para que o botão curtida aumente os likes corretamente.
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-document.addEventListener("DOMContentLoaded",() => {
-const likeBtn = document.querySelector(".left-actions .action-btn:first-child");
-if (!likeBtn) return;
-const likeSvg = likeBtn.querySelector("svg")
-})
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Social Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-//Para números acima de 1000
+<body>
 
-function formatLikes(num){
-    if(num >=1000){
-        return (num/1000).toFixed(1)+"K";
-    }
-    return num.toString();
+    <div class="phone-frame">
+        <div class="phone-screen">
+
+            <!-- Cabeçalho do Post -->
+            <div class="post-header">
+                <div class="user-info">
+                    <img class="avatar-small"
+                        src="https://www.outerspace.com.br/wp-content/uploads/2018/10/PlayStationlogo.png" ;
+                        alt="Avatar">
+                    <span class="username">Playstation</span>
+                </div>
+                <div class="more-options">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="5" cy="12" r="2" />
+                        <circle cx="12" cy="12" r="2" />
+                        <circle cx="19" cy="12" r="2" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Mídia Principal -->
+            <div class="post-media">
+                <img class="main-img"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsejrnxKJ3GXy1ycSkVTvtR6kI_Cr0rnp4-LroJM2rvN6fEq7T2xXzNXNm&s=10"
+                    Post photo">
+
+                <!-- Sticker/Badge sobreposto na foto -->
+                <div class="user-badge">
+                    <img src="https://images.unsplash.com/photo-1642456074142-92f75cb84533?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3BpZGVybWFufGVufDB8fDB8fHww"
+                        User overlay">
+                    <div class="plus-icon">+</div>
+                </div>
+            </div>
+
+            <!-- Barra de Interações -->
+            <div class="post-actions">
+                <div class="left-actions">
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                        1.2K
+                    </button>
+
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                        57
+                    </button>
+
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="17 1 21 5 17 9"></polyline>
+                            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                            <polyline points="7 23 3 19 7 15"></polyline>
+                            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                        </svg>
+                        24
+                    </button>
+
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        6
+                    </button>
+                </div>
+
+                <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Detalhes / Curtidas -->
+            <div class="post-details">
+                <p class="likes">Liked by <strong>liam_beanz99</strong> and <strong>235 others</strong></p>
+            </div>
+
+            <!-- Navegação Inferior -->
+            <div class="nav-bar">
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Social Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="phone-frame">
+        <div class="phone-screen">
+
+            <!-- Cabeçalho do Post -->
+            <div class="post-header">
+                <div class="user-info">
+                    <img class="avatar-small"
+                        src="https://www.outerspace.com.br/wp-content/uploads/2018/10/PlayStationlogo.png" ;
+                        alt="Avatar">
+                    <span class="username">Playstation</span>
+                </div>
+                <div class="more-options">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="5" cy="12" r="2" />
+                        <circle cx="12" cy="12" r="2" />
+                        <circle cx="19" cy="12" r="2" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Mídia Principal -->
+            <div class="post-media">
+                <img class="main-img"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsejrnxKJ3GXy1ycSkVTvtR6kI_Cr0rnp4-LroJM2rvN6fEq7T2xXzNXNm&s=10"
+                    Post photo">
+
+                <!-- Sticker/Badge sobreposto na foto -->
+                <div class="user-badge">
+                    <img src="https://images.unsplash.com/photo-1642456074142-92f75cb84533?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3BpZGVybWFufGVufDB8fDB8fHww"
+                        User overlay">
+                    <div class="plus-icon">+</div>
+                </div>
+            </div>
+
+            <!-- Barra de Interações -->
+            <div class="post-actions">
+                <div class="left-actions">
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                        1.2K
+                    </button>
+
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                        57
+                    </button>
+
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="17 1 21 5 17 9"></polyline>
+                            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                            <polyline points="7 23 3 19 7 15"></polyline>
+                            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                        </svg>
+                        24
+                    </button>
+
+                    <button class="action-btn">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        6
+                    </button>
+                </div>
+
+                <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Detalhes / Curtidas -->
+            <div class="post-details">
+                <p class="likes">Liked by <strong>liam_beanz99</strong> and <strong>235 others</strong></p>
+            </div>
+
+            <!-- Navegação Inferior -->
+            <div class="nav-bar">
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+CSS
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-//Incrementar a curtida
-function addLike(){
-    baseLikes++;
-    isLiked = true;
-    likeBtn.classList.add("liked");
-
-    if(likesCountSpan){
-        likesCountSpan.textContent = formatLikes(baseLikes);
-    }
+body {
+background-color: #0d0f12;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
 }
 
-// Efeito visual de animação (bounce) no coração.
-const svg = likeBtn.querySelector("svg");
-if (svg) {
-svg.style.transform = "scale(1.4)";
-setTimeout(() => {
-svg.style.transform = "scale(1)";
-}, 150);
-}
-}
-
-// Evento de clique no BOTÃO DE CORAÇÃO (Curte ou Descurte)
-likeBtn.addEventListener("click", (e) => {
-e.stopPropagation();
-
-if (isLiked) {
-// Se já estava curtido, descurte (-1)
-isLiked = false;
-baseLikes = Math.max(0, baseLikes - 1);
-likeBtn.classList.remove("liked");
-if (likesCountSpan) {
-likesCountSpan.textContent = formatLikes(baseLikes);
-}
-} else {
-// Se não estava curtido, adiciona curtida
-addLike();
-}
-});
-
-// Evento de clique na IMAGEM PRINCIPAL (Sempre aumenta likes)
-if (postMedia) {
-postMedia.addEventListener("click", (e) => {
-e.stopPropagation();
-addLike();
-});
+/* Moldura estilo smartphone com borda em gradiente */
+.phone-frame {
+width: 100%;
+max-width: 380px;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-// Evento no botão de SALVAR (Bookmark)[cite: 1]
-if (bookmarkBtn) {
-let isBookmarked = false;
-bookmarkBtn.addEventListener("click", (e) => {
-e.stopPropagation();
-isBookmarked = !isBookmarked;
-bookmarkBtn.classList.toggle("bookmarked", isBookmarked);
+.phone-screen {
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
 
-const svg = bookmarkBtn.querySelector("svg");
-if (svg) {
-svg.style.transform = "scale(1.2)";
-setTimeout(() => {
-svg.style.transform = "scale(1)";
-}, 150);
+/* Cabeçalho do Post */
+.post-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px;
 }
-});
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
 }
-});
+
+.avatar-small {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.username {
+font-weight: 600;
+font-size: 14px;
+color: #1c1e21;
+}
+
+.more-options {
+cursor: pointer;
+color: #1c1e21;
+}
+
+/* Mídia / Foto */
+.post-media {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 5;
+background-color: #eee;
+}
+
+.post-media img.main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Avatar pequeno com ícone '+' sobreposto na foto */
+.user-badge {
+position: absolute;
+bottom: 16px;
+left: 16px;
+width: 44px;
+height: 44px;
+}
+
+.user-badge img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 2px solid #ffffff;
+object-fit: cover;
+}
+
+.user-badge .plus-icon {
+position: absolute;
+bottom: -2px;
+right: -2px;
+background: #9333ea;
+color: white;
+font-size: 10px;
+font-weight: bold;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #ffffff;
+}
+
+/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
+.post-actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px 8px 16px;
+}
+
+.left-actions {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 13px;
+font-weight: 600;
+color: #1c1e21;
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.action-btn svg {
+width: 22px;
+height: 22px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* Texto de Curtidas */
+.post-details {
+padding: 0 16px 12px 16px;
+font-size: 13px;
+color: #1c1e21;
+}
+
+.likes {
+color: #4b5563;
+}
+
+.likes strong {
+color: #1c1e21;
+}
+
+/* Barra de Navegação Inferior */
+.nav-bar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px 0 16px 0;
+border-top: 1px solid #f0f0f0;
+background: #ffffff;
+}
+
+.nav-item {
+color: #1c1e21;
+cursor: pointer;
+}
+
+.nav-item svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #0d0f12;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Moldura estilo smartphone com borda em gradiente */
+.phone-frame {
+width: 100%;
+max-width: 380px;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.phone-screen {
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* Cabeçalho do Post */
+.post-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.avatar-small {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.username {
+font-weight: 600;
+font-size: 14px;
+color: #1c1e21;
+}
+
+.more-options {
+cursor: pointer;
+color: #1c1e21;
+}
+
+/* Mídia / Foto */
+.post-media {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 5;
+background-color: #eee;
+}
+
+.post-media img.main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Avatar pequeno com ícone '+' sobreposto na foto */
+.user-badge {
+position: absolute;
+bottom: 16px;
+left: 16px;
+width: 44px;
+height: 44px;
+}
+
+.user-badge img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 2px solid #ffffff;
+object-fit: cover;
+}
+
+.user-badge .plus-icon {
+position: absolute;
+bottom: -2px;
+right: -2px;
+background: #9333ea;
+color: white;
+font-size: 10px;
+font-weight: bold;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #ffffff;
+}
+
+/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
+.post-actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px 8px 16px;
+}
+
+.left-actions {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 13px;
+font-weight: 600;
+color: #1c1e21;
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.action-btn svg {
+width: 22px;
+height: 22px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* Texto de Curtidas */
+.post-details {
+padding: 0 16px 12px 16px;
+font-size: 13px;
+color: #1c1e21;
+}
+
+.likes {
+color: #4b5563;
+}
+
+.likes strong {
+color: #1c1e21;
+}
+
+/* Barra de Navegação Inferior */
+.nav-bar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px 0 16px 0;
+border-top: 1px solid #f0f0f0;
+background: #ffffff;
+}
+
+.nav-item {
+color: #1c1e21;
+cursor: pointer;
+}
+
+.nav-item svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+}* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #0d0f12;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Moldura estilo smartphone com borda em gradiente */
+.phone-frame {
+width: 100%;
+max-width: 380px;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.phone-screen {
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* Cabeçalho do Post */
+.post-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.avatar-small {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.username {
+font-weight: 600;
+font-size: 14px;
+color: #1c1e21;
+}
+
+.more-options {
+cursor: pointer;
+color: #1c1e21;
+}
+
+/* Mídia / Foto */
+.post-media {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 5;
+background-color: #eee;
+}
+
+.post-media img.main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Avatar pequeno com ícone '+' sobreposto na foto */
+.user-badge {
+position: absolute;
+bottom: 16px;
+left: 16px;
+width: 44px;
+height: 44px;
+}
+
+.user-badge img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 2px solid #ffffff;
+object-fit: cover;
+}
+
+.user-badge .plus-icon {
+position: absolute;
+bottom: -2px;
+right: -2px;
+background: #9333ea;
+color: white;
+font-size: 10px;
+font-weight: bold;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #ffffff;
+}
+
+/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
+.post-actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px 8px 16px;
+}
+
+.left-actions {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 13px;
+font-weight: 600;
+color: #1c1e21;
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.action-btn svg {
+width: 22px;
+height: 22px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* Texto de Curtidas */
+.post-details {
+padding: 0 16px 12px 16px;
+font-size: 13px;
+color: #1c1e21;
+}
+
+.likes {
+color: #4b5563;
+}
+
+.likes strong {
+color: #1c1e21;
+}
+
+/* Barra de Navegação Inferior */
+.nav-bar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px 0 16px 0;
+border-top: 1px solid #f0f0f0;
+background: #ffffff;
+}
+
+.nav-item {
+color: #1c1e21;
+cursor: pointer;
+}
+
+.nav-item svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #0d0f12;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Moldura estilo smartphone com borda em gradiente */
+.phone-frame {
+width: 100%;
+max-width: 380px;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.phone-screen {
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* Cabeçalho do Post */
+.post-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.avatar-small {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.username {
+font-weight: 600;
+font-size: 14px;
+color: #1c1e21;
+}
+
+.more-options {
+cursor: pointer;
+color: #1c1e21;
+}
+
+/* Mídia / Foto */
+.post-media {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 5;
+background-color: #eee;
+}
+
+.post-media img.main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Avatar pequeno com ícone '+' sobreposto na foto */
+.user-badge {
+position: absolute;
+bottom: 16px;
+left: 16px;
+width: 44px;
+height: 44px;
+}
+
+.user-badge img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 2px solid #ffffff;
+object-fit: cover;
+}
+
+.user-badge .plus-icon {
+position: absolute;
+bottom: -2px;
+right: -2px;
+background: #9333ea;
+color: white;
+font-size: 10px;
+font-weight: bold;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #ffffff;
+}
+
+/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
+.post-actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px 8px 16px;
+}
+
+.left-actions {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 13px;
+font-weight: 600;
+color: #1c1e21;
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.action-btn svg {
+width: 22px;
+height: 22px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* Texto de Curtidas */
+.post-details {
+padding: 0 16px 12px 16px;
+font-size: 13px;
+color: #1c1e21;
+}
+
+.likes {
+color: #4b5563;
+}
+
+.likes strong {
+color: #1c1e21;
+}
+
+/* Barra de Navegação Inferior */
+.nav-bar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px 0 16px 0;
+border-top: 1px solid #f0f0f0;
+background: #ffffff;
+}
+
+.nav-item {
+color: #1c1e21;
+cursor: pointer;
+}
+
+.nav-item svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+}* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #0d0f12;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Moldura estilo smartphone com borda em gradiente */
+.phone-frame {
+width: 100%;
+max-width: 380px;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.phone-screen {
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* Cabeçalho do Post */
+.post-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.avatar-small {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.username {
+font-weight: 600;
+font-size: 14px;
+color: #1c1e21;
+}
+
+.more-options {
+cursor: pointer;
+color: #1c1e21;
+}
+
+/* Mídia / Foto */
+.post-media {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 5;
+background-color: #eee;
+}
+
+.post-media img.main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Avatar pequeno com ícone '+' sobreposto na foto */
+.user-badge {
+position: absolute;
+bottom: 16px;
+left: 16px;
+width: 44px;
+height: 44px;
+}
+
+.user-badge img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 2px solid #ffffff;
+object-fit: cover;
+}
+
+.user-badge .plus-icon {
+position: absolute;
+bottom: -2px;
+right: -2px;
+background: #9333ea;
+color: white;
+font-size: 10px;
+font-weight: bold;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #ffffff;
+}
+
+/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
+.post-actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px 8px 16px;
+}
+
+.left-actions {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 13px;
+font-weight: 600;
+color: #1c1e21;
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.action-btn svg {
+width: 22px;
+height: 22px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* Texto de Curtidas */
+.post-details {
+padding: 0 16px 12px 16px;
+font-size: 13px;
+color: #1c1e21;
+}
+
+.likes {
+color: #4b5563;
+}
+
+.likes strong {
+color: #1c1e21;
+}
+
+/* Barra de Navegação Inferior */
+.nav-bar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px 0 16px 0;
+border-top: 1px solid #f0f0f0;
+background: #ffffff;
+}
+
+.nav-item {
+color: #1c1e21;
+cursor: pointer;
+}
+
+.nav-item svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #0d0f12;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Moldura estilo smartphone com borda em gradiente */
+.phone-frame {
+width: 100%;
+max-width: 380px;
+border-radius: 40px;
+padding: 8px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.phone-screen {
+background: #ffffff;
+border-radius: 32px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+/* Cabeçalho do Post */
+.post-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px;
+}
+
+.user-info {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.avatar-small {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.username {
+font-weight: 600;
+font-size: 14px;
+color: #1c1e21;
+}
+
+.more-options {
+cursor: pointer;
+color: #1c1e21;
+}
+
+/* Mídia / Foto */
+.post-media {
+position: relative;
+width: 100%;
+aspect-ratio: 4 / 5;
+background-color: #eee;
+}
+
+.post-media img.main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Avatar pequeno com ícone '+' sobreposto na foto */
+.user-badge {
+position: absolute;
+bottom: 16px;
+left: 16px;
+width: 44px;
+height: 44px;
+}
+
+.user-badge img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 2px solid #ffffff;
+object-fit: cover;
+}
+
+.user-badge .plus-icon {
+position: absolute;
+bottom: -2px;
+right: -2px;
+background: #9333ea;
+color: white;
+font-size: 10px;
+font-weight: bold;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #ffffff;
+}
+
+/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
+.post-actions {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 12px 16px 8px 16px;
+}
+
+.left-actions {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 13px;
+font-weight: 600;
+color: #1c1e21;
+cursor: pointer;
+background: none;
+border: none;
+}
+
+.action-btn svg {
+width: 22px;
+height: 22px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* Texto de Curtidas */
+.post-details {
+padding: 0 16px 12px 16px;
+font-size: 13px;
+color: #1c1e21;
+}
+
+.likes {
+color: #4b5563;
+}
+
+.likes strong {
+color: #1c1e21;
+}
+
+/* Barra de Navegação Inferior */
+.nav-bar {
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 12px 0 16px 0;
+border-top: 1px solid #f0f0f0;
+background: #ffffff;
+}
+
+.nav-item {
+color: #1c1e21;
+cursor: pointer;
+}
+
+.nav-item svg {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+}
